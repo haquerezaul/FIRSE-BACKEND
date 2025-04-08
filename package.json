@@ -2,10 +2,14 @@
   "name": "firse-backend",
   "version": "1.0.0",
   "description": "backend sikhraha hu",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon src/index.js"
   },
   "author": "REZAUL HAQUE",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }
