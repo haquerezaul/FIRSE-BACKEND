@@ -32,7 +32,7 @@ const userSchema = new Schema(
         coverImage: {
             type: String,
             default: "cloudinary.com/default-cover.png",
-            required: true,
+            required: false,
         },
         watchHistory: {
             type: [Schema.Types.ObjectId],

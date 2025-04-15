@@ -13,7 +13,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
         throw new ApiError("All fields are required", 400);
     }
 
-    const existedUser=  User.findOne({
+    const existedUser=  await User.findOne({
         $or: [
             { username: username },
             { email: email },
@@ -37,12 +37,12 @@ import { ApiResponse } from "../utils/ApiResponse.js";
     }
 
     const user = await User.create({
-        username: username.tolowerCase(),
+        username: username.toLowerCase(),
         email,
         fullname,
         password,
         avatar : avatar.url,
-        coverImage: coverImage?.url ||"",
+        coverImage: coverImage?.url || "cloudinary.com/default-cover.png",
 
     });
     const createdUser = await User.findById(user._id).select("-password -refreshToken");
